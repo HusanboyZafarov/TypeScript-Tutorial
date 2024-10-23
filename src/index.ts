@@ -85,3 +85,67 @@
 
 // function myFunc(a: number, b: number): number {}
 // ERROR: myFunc is expected to return a "number" but "nothing" is returned.
+
+// --
+// Arrays
+// Type: number[]
+// let numbers = [1, 2, 3];
+
+// Type: any[]
+// let numbers: = [1, 2, "3"];
+
+// Error
+// let numbers: number[] = [1, 2, "3"];
+
+// --
+// Tuples
+// Type: tuple[]
+// let user: [number, string] = [1, "safir"];
+
+// Error
+// let user: [number, string, number] = [1, "safir", 26, "30"];
+
+// --
+// Enums
+// const small = 1;
+// const medium = 2;
+// const large = 3;
+
+// PascalCase
+// enum Size {
+//   Small = 1,
+//   Medium,
+//   Large,
+// }
+
+// let mySize: Size = Size.Medium;
+
+// --
+// Functions
+// function calculateTax(income: number, taxYear = 2022) {
+//   if (taxYear <= 2022) return income * 1.2;
+//   return income * 1.3;
+// }
+
+// console.log(calculateTax(10_000,2023));
+
+// --
+// Objects
+// let employee: {
+//   readonly id: number;
+//   name: string;
+//   retire?: (date: Date) => void;
+// } = {
+//   id: 1,
+//   name: "Safir",
+//   retire: (date: Date) => {
+//     console.log(date);
+//   },
+// };
+
+// Cannot assign to 'id' because it is a read-only property.
+// employee.id = 0
+
+// Error, we cannot add key and value if it does not exist in object
+// employee.name = "Safir"
+// Property 'name' does not exist on type '{ id: number; }'.
